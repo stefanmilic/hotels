@@ -1,0 +1,17 @@
+$content-area-widths: (
+  'small': 90vw,
+  'medium': 768px,
+  'large': 960px
+);
+
+$breakpoints: (
+  'small': (
+    max-width: 767px
+  ),
+  'medium': (
+    max-width: 1023px
+  ),
+  'large': (
+    min-width: 1024px
+  )
+);
