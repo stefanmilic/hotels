@@ -6,9 +6,7 @@
 
   &__header {
     display: flex;
-    // align-items: center;
     min-height: 4.29rem;
-    // padding: 0 2.14rem;
     box-shadow: inset 0 -1px 0 0 #e1e8ee, inset 0 1px 0 0 #e1e8ee;
 
     @include responsive(small) {
