@@ -21,11 +21,8 @@ function* createComment$(action: ReturnType<typeof actions.createComment>) {
 
   try {
     const data = yield connection.post(`/hotels/comment/${id}`, {
-      params: {
-        hotel_id: id,
-        comment: text,
-        fullName: name,
-      },
+      comment: text,
+      fullName: name,
     });
     console.log(data);
     // yield put(actions.fetcHotelCommentsSuccess(comments.slice(0, 10)));
