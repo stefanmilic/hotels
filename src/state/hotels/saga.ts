@@ -2,7 +2,6 @@ import { all, put, takeLatest } from 'redux-saga/effects';
 import { HotelActionTypes } from './actions';
 import * as actions from './actionCreators';
 import connection from 'src/utils/connection';
-//const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT || 'https://api.opendota.com'
 
 function* fetchHotels$() {
   try {

@@ -3,7 +3,11 @@ import { block } from 'bem-cn';
 
 const b = block('comments-list');
 
-const CommentsList = ({ fullName, comment }: any) => {
+interface CommentsListProps {
+  fullName: string;
+  comment: string;
+}
+const CommentsList: React.FC<CommentsListProps> = ({ fullName, comment }) => {
   return (
     <div className={b()}>
       <h5>{fullName}</h5>

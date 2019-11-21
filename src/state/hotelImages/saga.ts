@@ -8,7 +8,6 @@ function* fetchHotelImages$(
 ) {
   try {
     const { data } = yield connection.get(`/hotels/images/${action.payload}`);
-    // console.log(data.images);
     yield put(actions.fetcHotelImagesSuccess(data));
   } catch (e) {
     yield put(actions.fetcHotelImagesError(e));

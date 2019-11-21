@@ -1,5 +1,7 @@
+import { HotelComments } from 'src/types/hotel';
+
 export interface State {
-  hotelComments: any[];
+  hotelComments: HotelComments[];
   isHotelCommentsInProgress: boolean;
   hotelCommentsError: any;
 }

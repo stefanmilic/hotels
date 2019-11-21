@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { block } from 'bem-cn';
 import { format } from 'date-fns';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -6,7 +6,6 @@ import { fetchHotelComments } from '../state/hotelComments/actionCreators';
 import { fetchHotelImages } from '../state/hotelImages/actionCreators';
 import Slider from 'react-slick';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
-// import Image from '../assets/images/tram.png';
 import Loader from 'react-loader-spinner';
 import CommentForm from './CommentForm';
 import CommentsList from './CommentsList';
@@ -18,7 +17,7 @@ import {
   getHotelImages,
   isHotelImagesLoading,
 } from 'src/state/selectors';
-import { Hotel, HotelImages, HotelComments } from 'src/types/hotel';
+import { Hotel, HotelImagesMap, HotelComments } from 'src/types/hotel';
 
 const b = block('hotel-card');
 
@@ -34,7 +33,7 @@ const settings = {
 
 interface HotelCardProps extends Hotel {
   hotelComments: HotelComments[];
-  hotelImages: HotelImages[];
+  hotelImages: HotelImagesMap;
   commentLoading: boolean;
   imagesLoading: boolean;
   fetchHotelImages: (id: string) => void;
@@ -57,7 +56,7 @@ const HotelCard: React.FC<HotelCardProps> = ({
   hotelImages,
   imagesLoading,
 }) => {
-  const [setActive, setActiveState] = React.useState(false);
+  const [setActive, setActiveState] = useState(false);
 
   useEffect(() => {
     fetchHotelImages(id);
@@ -83,8 +82,6 @@ const HotelCard: React.FC<HotelCardProps> = ({
       ))
     );
   };
-
-  const date = new Date(date_created);
 
   return (
     <div className={b()}>
@@ -125,7 +122,7 @@ const HotelCard: React.FC<HotelCardProps> = ({
             <button onClick={toggleAccordion} className={b('show-btn')}>
               {setActive ? 'Hide reviews' : 'Show reviews'}
             </button>
-            <div>{format(date, 'dd.MM.yyyy')}</div>
+            <div>{format(new Date(date_created), 'dd.MM.yyyy')}</div>
           </div>
         </div>
       </div>

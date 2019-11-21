@@ -1,6 +1,5 @@
-export interface HotelImagesMap {
-  [key: string]: any;
-}
+import { HotelImagesMap } from 'src/types/hotel';
+
 export interface State {
   hotelImages: HotelImagesMap;
   isHotelImagesInProgress: boolean;

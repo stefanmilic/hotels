@@ -61,9 +61,7 @@ const CommentForm: React.FC<CommentOuterProps> = ({
   return (
     <Formik
       initialValues={initialValues}
-      enableReinitialize={false}
       onSubmit={(values, actions) => {
-        console.log(values);
         createComment(hotelId, values.name, values.comment);
         // actions.setSubmitting(false);
         // actions.resetForm();
