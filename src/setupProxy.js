@@ -1,5 +1,5 @@
 const proxy = require('http-proxy-middleware');
-console.log(process.env.REACT_APP_SOBOT_URL);
+
 module.exports = function(app) {
   app.use(
     '/hotels/',

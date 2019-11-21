@@ -3,14 +3,11 @@ import { block } from 'bem-cn';
 
 const b = block('comments-list');
 
-const CommentsList = () => {
+const CommentsList = ({ fullName, comment }: any) => {
   return (
     <div className={b()}>
-      <h5>Stefan milic</h5>
-      <div>
-        ovo je moj comentarvo je moj comentarvo je moj comentarvo je moj
-        comentarvo je moj comentar
-      </div>
+      <h5>{fullName}</h5>
+      <div>{comment}</div>
     </div>
   );
 };

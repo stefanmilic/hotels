@@ -11,7 +11,7 @@ export interface Hotel {
 
 export interface HotelImages {
   hotel_id: string;
-  images: any[];
+  images: string[];
 }
 
 export interface HotelComments {

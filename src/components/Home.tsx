@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import AccordionCard from './AccordionCard';
+import HotelCard from './HotelCard';
 import { block } from 'bem-cn';
 import { connect } from 'react-redux';
 import { fetchHotels } from '../state/hotels/actionCreators';
@@ -17,7 +17,7 @@ interface HomeProps {
 const Home: React.FC<HomeProps> = ({ hotels, fetchHotels }) => {
   useEffect(() => {
     fetchHotels();
-  }, []);
+  }, [fetchHotels]);
 
   if (hotels.length === 0) {
     return null;
@@ -26,14 +26,16 @@ const Home: React.FC<HomeProps> = ({ hotels, fetchHotels }) => {
   return (
     <div className={b()}>
       {hotels.map(item => {
-        return <AccordionCard key={item.id} {...item} />;
+        return <HotelCard key={item.id} {...item} />;
       })}
     </div>
   );
 };
 
-const mapStateToProps = (state: State) => ({
-  hotels: getHotels(state),
-});
+const mapStateToProps = (state: State) => {
+  return {
+    hotels: getHotels(state),
+  };
+};
 
 export default connect(mapStateToProps, { fetchHotels })(Home);

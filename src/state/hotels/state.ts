@@ -5,9 +5,9 @@ export interface State {
   // hotelImages:any[];
   // isHotelImagesInProgress:boolean;
   // hotelImagesError:any
-  // hotelComments:any[];
-  // isHotelCommentsInProgress:boolean;
-  // hotelCommentsError:any
+  hotelComments: any[];
+  isHotelCommentsInProgress: boolean;
+  hotelCommentsError: any;
 }
 
 export const initialState: State = {
@@ -17,7 +17,7 @@ export const initialState: State = {
   // hotelImages:[],
   // isHotelImagesInProgress:false,
   // hotelImagesError:null,
-  // hotelComments:[],
-  // isHotelCommentsInProgress:false,
-  // hotelCommentsError:null
+  hotelComments: [],
+  isHotelCommentsInProgress: false,
+  hotelCommentsError: null,
 };

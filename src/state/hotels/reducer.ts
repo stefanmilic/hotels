@@ -1,8 +1,8 @@
-// import { Reducer } from 'redux';
+import { Reducer } from 'redux';
 import { HotelActionTypes } from './actions';
-import { initialState } from './state';
+import { initialState, State } from './state';
 
-const reducer = (state = initialState, action: any) => {
+const reducer: Reducer<State> = (state = initialState, action: any) => {
   switch (action.type) {
     case HotelActionTypes.FETCH_HOTELS_REQUEST:
       return {
